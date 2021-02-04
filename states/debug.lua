@@ -22,10 +22,11 @@ end
 
 function debug:enter()
     countStates()
+    love.graphics.setColor(255, 255, 255)
 end
 
 function debug:draw()
-    local list = 'List of states:'
+    local list = 'you found the hidden debug menu :o\n\nList of states:'
     local i = 1
     for state, obj in pairs(states) do
         list = list .. '\n' 
