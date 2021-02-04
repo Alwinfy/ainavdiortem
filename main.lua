@@ -12,6 +12,11 @@ function love.load()
   player.body = love.physics.newBody(world, 500, 500, "dynamic")
   player.shape = love.physics.newRectangleShape(100, 100)
   player.fixture = love.physics.newFixture(player.body, player.shape)
+
+  idk = {}
+  idk.body = love.physics.newBody(world, 400, 400, "static")
+  idk.shape = love.physics.newRectangleShape(100, 100)
+  idk.fixture = love.physics.newFixture(idk.body, idk.shape)
 end
 
 function love.update(dt)
@@ -40,6 +45,9 @@ function love.draw()
   love.graphics.polygon("fill", ground.body:getWorldPoints(
                          ground.shape:getPoints()))
 
+  love.graphics.polygon("fill", idk.body:getWorldPoints(
+                          idk.shape:getPoints()))
+  
   love.graphics.setColor(255, 0, 0)
   love.graphics.polygon("fill", player.body:getWorldPoints(
                          player.shape:getPoints()))
