@@ -8,6 +8,13 @@ states.debug = require 'states.debug'
 states.game = require 'states.game'
 states.physics = require 'states.physics' -- Original love.physics state
 
+function love.keyreleased(key)
+    print('key ' .. key .. ' released')
+    if key == 'f3' then
+        Gamestate.switch(states.debug)
+    end
+end
+
 function love.load()
     love.graphics.setNewFont(24)
     -- Overwrite all love callbacks to the library that manages game states
