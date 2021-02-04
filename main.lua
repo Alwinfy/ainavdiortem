@@ -6,6 +6,7 @@ states.pause = require 'states.pause'
 states.swoleTim = require 'states.swoleTim' -- I was experimenting with the love callbacks with this :P
 states.debug = require 'states.debug'
 states.game = require 'states.game'
+states.physics = require 'states.physics' -- Original love.physics state
 
 function love.load()
     love.graphics.setNewFont(24)

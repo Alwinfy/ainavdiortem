@@ -1,4 +1,6 @@
-function love.load()
+local physics = {}
+
+function physics:enter()
   meterSize = 64
   love.physics.setMeter(meterSize) --height of 1 meter in pixels for physics purposes
   world = love.physics.newWorld(0, 9.81*meterSize, true)
@@ -19,7 +21,7 @@ function love.load()
   idk.fixture = love.physics.newFixture(idk.body, idk.shape)
 end
 
-function love.update(dt)
+function physics:update(dt)
   world:update(dt)
 
   x, y = player.body:getLinearVelocity()
@@ -40,7 +42,7 @@ function love.update(dt)
 
 end
 
-function love.draw()
+function physics:draw()
   love.graphics.setColor(0, 255, 0)
   love.graphics.polygon("fill", ground.body:getWorldPoints(
                          ground.shape:getPoints()))
@@ -52,3 +54,5 @@ function love.draw()
   love.graphics.polygon("fill", player.body:getWorldPoints(
                          player.shape:getPoints()))
 end
+
+return physics
