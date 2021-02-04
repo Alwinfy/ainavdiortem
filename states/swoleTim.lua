@@ -54,6 +54,10 @@ function swoleTim:focus(focused)
     end
 end
 
+function swoleTim:resume()
+    text.msg = 'you paused me :('
+end
+
 function swoleTim:quit()
     -- This is Linux-only but I'm just experimenting :P
     os.execute('notify-send "swole tim says" "you closed me :("')
