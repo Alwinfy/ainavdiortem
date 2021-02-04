@@ -14,6 +14,14 @@ function love.keyreleased(key)
     if key == 'f3' then
         Gamestate.switch(states.debug)
     end
+    -- Esc opens or closes the pause screen (if not on main menu or pause screen)
+    if key == 'escape' then
+        if Gamestate.current() == states.pause then
+            Gamestate.pop()
+        elseif Gamestate.current() ~= states.menu then
+            Gamestate.push(states.pause)
+        end
+    end
 end
 
 function love.load()
