@@ -22,9 +22,9 @@ end
 
 function togglePause()
     if Gamestate.current() == states.pause then
-        pause()
-    else
         unpause()
+    else
+        pause()
     end
 end
 
