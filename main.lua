@@ -1,5 +1,7 @@
 Gamestate = require 'libs.hump.gamestate'
 
+stage = 'stage2'
+
 states = {}
 states.menu = require 'states.menu'
 states.pause = require 'states.pause'
