@@ -7,7 +7,7 @@ function game:enter()
     music = love.audio.newSource('assets/music/simple_tune_for_game_jam.wav', 'stream')
     music:play()
     music:setLooping(true)
-    map = sti('assets/tiled/untitled.lua')
+    map = sti('assets/tiled/stage1.lua')
 end
 
 function game:leave()
