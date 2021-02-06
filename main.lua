@@ -8,6 +8,14 @@ states.debug = require 'states.debug'
 states.game = require 'states.game'
 states.physics = require 'states.physics' -- Original love.physics state
 
+function togglePause()
+    if Gamestate.current() == states.pause then
+        Gamestate.pop()
+    elseif Gamestate.current() ~= states.menu then
+        Gamestate.push(states.pause)
+    end
+end
+
 function love.keyreleased(key)
     print('key ' .. key .. ' released')
     -- F3 opens the debug menu
@@ -16,11 +24,7 @@ function love.keyreleased(key)
     end
     -- Esc opens or closes the pause screen (if not on main menu or pause screen)
     if key == 'escape' then
-        if Gamestate.current() == states.pause then
-            Gamestate.pop()
-        elseif Gamestate.current() ~= states.menu then
-            Gamestate.push(states.pause)
-        end
+        togglePause()
     end
 end
 
