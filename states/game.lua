@@ -8,7 +8,7 @@ function game:enter()
 end
 
 function game:leave()
-    music:pause()
+    music:stop()
 end
 
 function game:resume()
