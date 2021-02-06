@@ -13,6 +13,9 @@ function game:enter()
     music:play()
     music:setLooping(true)
 
+    -- Create camera
+    camera = Camera(0, 0, 4)
+
     -- Load map
     -- From https://github.com/karai17/Simple-Tiled-Implementation/blob/master/tutorials/01-introduction-to-sti.md
     map = sti('assets/tiled/test2.lua')
@@ -64,9 +67,6 @@ function game:enter()
 			self.player.oy
         )
     end
-
-    -- Create camera
-    camera = Camera(200, 200, 2)
 end
 
 function game:leave()
