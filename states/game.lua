@@ -7,6 +7,10 @@ function game:enter()
     music:setLooping(true)
 end
 
+function game:leave()
+    music:pause()
+end
+
 function game:resume()
     -- Resume the music when we resume
     music:play()
