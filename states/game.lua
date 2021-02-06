@@ -1,22 +1,24 @@
 local sti = require 'libs.sti.sti'
--- local Camera = require 'libs.hump.camera'
+local Camera = require 'libs.hump.camera'
 
 local game = {}
+
+local function getPlayer()
+    return map.layers["Sprites"].player
+end
 
 function game:enter()
     -- Play music
     music = love.audio.newSource('assets/music/simple_tune_for_game_jam.wav', 'stream')
     music:play()
     music:setLooping(true)
-    
-    -- Create camera
-    -- camera = Camera(0, 0, 1)
 
     -- Load map
     -- From https://github.com/karai17/Simple-Tiled-Implementation/blob/master/tutorials/01-introduction-to-sti.md
     map = sti('assets/tiled/test2.lua')
     local layer = map:addCustomLayer('Sprites', 4)
 
+    local player
     for k, object in pairs(map.objects) do
         if object.name == 'player' then
             player = object
@@ -27,9 +29,7 @@ function game:enter()
     layer.player = {
         sprite = sprite,
         x = player.x,
-        y = player.y,
-        ox = sprite:getWidth() / 2,
-        oy = sprite:getHeight() / 1.35,
+        y = player.y
     }
 
     layer.update = function(self, dt)
@@ -63,11 +63,10 @@ function game:enter()
 			self.player.ox,
 			self.player.oy
         )
-        -- Temporarily draw a point at our location so we know
-		-- that our sprite is offset properly
-        love.graphics.setPointSize(5)
-        love.graphics.points(math.floor(self.player.x), math.floor(self.player.y))
     end
+
+    -- Create camera
+    camera = Camera(200, 200, 2)
 end
 
 function game:leave()
@@ -81,6 +80,8 @@ end
 
 function game:update(dt)
     map:update(dt)
+    local player = getPlayer()
+    camera:lookAt(player.x, player.y)
 
     if love.keyboard.isDown('j') then
         camera:move(100 * dt, 0)
@@ -97,7 +98,7 @@ function game:update(dt)
 end
 
 function game:draw()
-    -- camera:attach()
+    camera:attach()
 
     -- Scale world
 	local scale = 2
@@ -105,7 +106,7 @@ function game:draw()
 	local screen_height = love.graphics.getHeight() / scale
 
 	-- Translate world so that player is always centred
-	local player = map.layers["Sprites"].player
+	local player = getPlayer()
 	local tx = math.floor(player.x - screen_width  / 2)
 	local ty = math.floor(player.y - screen_height / 2)
 
@@ -115,10 +116,10 @@ function game:draw()
 
 
     map:draw(
-    --    -camera.x, -camera.y, camera.scale, camera.scale
+        -camera.x, -camera.y, camera.scale, camera.scale
     )
 
-    -- camera:detach()
+    camera:detach()
 end
 
 return game
