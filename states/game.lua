@@ -7,7 +7,7 @@ local function getPlayer()
     return map.layers.entities.player
 end
 
-local updateEntites = function (self, dt)
+local function updateEntites(self, dt)
     local speed = 96 * dt
 
     if love.keyboard.isDown('w', 'up') then
@@ -27,7 +27,7 @@ local updateEntites = function (self, dt)
     end
 end
 
-local drawEntities = function (self, dt)
+local function drawEntities(self, dt)
     love.graphics.draw(
         self.player.sprite,
         math.floor(self.player.x),
