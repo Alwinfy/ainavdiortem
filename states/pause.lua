@@ -4,6 +4,7 @@ local pause = {}
 
 function pause:enter(from)
     self.from = from
+    music:pause()
 end
 
 function pause:draw()
