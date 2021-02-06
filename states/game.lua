@@ -51,7 +51,7 @@ function game:enter()
 
     -- Load map
     -- From https://github.com/karai17/Simple-Tiled-Implementation/blob/master/tutorials/01-introduction-to-sti.md
-    map = sti('assets/tiled/stage1.lua')
+    map = sti('assets/tiled/stage2.lua')
 
     local layer = map:addCustomLayer('entities', 4)
     for k, object in pairs(map.objects) do
