@@ -5,7 +5,7 @@ tim = {x = 300, y = 200}
 text = {x = 100, y = 200, msg = 'Hello world! :D'}
 
 function swoleTim:enter()
-    tim.image = love.graphics.newImage('assets/swole-tim.png')
+    tim.image = love.graphics.newImage('assets/entities/swole-tim.png')
     love.graphics.setNewFont(24)
 end
 
