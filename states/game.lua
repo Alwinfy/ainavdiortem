@@ -100,23 +100,10 @@ end
 function game:draw()
     camera:attach()
 
-    -- Scale world
-	local scale = 2
-	local screen_width  = love.graphics.getWidth()  / scale
-	local screen_height = love.graphics.getHeight() / scale
-
-	-- Translate world so that player is always centred
-	local player = getPlayer()
-	local tx = math.floor(player.x - screen_width  / 2)
-	local ty = math.floor(player.y - screen_height / 2)
-
-	-- Transform world
-	love.graphics.scale(scale)
-	love.graphics.translate(-tx, -ty)
-
-
     map:draw(
-        -camera.x, -camera.y, camera.scale, camera.scale
+        -camera.x + love.graphics.getWidth() / (2 * camera.scale), 
+        -camera.y + love.graphics.getHeight() / (2 * camera.scale),
+        camera.scale, camera.scale
     )
 
     camera:detach()
