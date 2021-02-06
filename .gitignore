@@ -1,3 +1,6 @@
+# Tiled session
+*.tiled-session
+
 # Compiled Lua sources
 luac.out
 
