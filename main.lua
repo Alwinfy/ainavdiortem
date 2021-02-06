@@ -28,6 +28,7 @@ function togglePause()
     end
 end
 
+-- Pause or unpause based on focus
 function love.focus(gainsFocus)
     if gainsFocus then
         unpause()
