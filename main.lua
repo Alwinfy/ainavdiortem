@@ -8,11 +8,31 @@ states.debug = require 'states.debug'
 states.game = require 'states.game'
 states.physics = require 'states.physics' -- Original love.physics state
 
-function togglePause()
+function unpause()
     if Gamestate.current() == states.pause then
         Gamestate.pop()
-    elseif Gamestate.current() ~= states.menu then
+    end
+end
+
+function pause()
+    if Gamestate.current() ~= states.menu and Gamestate.current() ~= states.pause then
         Gamestate.push(states.pause)
+    end
+end
+
+function togglePause()
+    if Gamestate.current() == states.pause then
+        pause()
+    else
+        unpause()
+    end
+end
+
+function love.focus(gainsFocus)
+    if gainsFocus then
+        unpause()
+    else
+        pause()
     end
 end
 
