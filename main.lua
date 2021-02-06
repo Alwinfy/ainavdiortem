@@ -1,6 +1,6 @@
 Gamestate = require 'libs.hump.gamestate'
 
-stage = 'stage2'
+stage = 'stage3'
 
 states = {}
 states.menu = require 'states.menu'
@@ -56,5 +56,5 @@ function love.load()
     -- Overwrite all love callbacks to the library that manages game states
     Gamestate.registerEvents()
     -- Switch to main menu
-    Gamestate.switch(states.debug)
+    Gamestate.switch(states.game)
 end
