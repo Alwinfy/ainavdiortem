@@ -18,7 +18,7 @@ function game:enter()
 
     -- Load map
     -- From https://github.com/karai17/Simple-Tiled-Implementation/blob/master/tutorials/01-introduction-to-sti.md
-    map = sti('assets/tiled/test2.lua')
+    map = sti('assets/tiled/stage1.lua')
     local layer = map:addCustomLayer('Sprites', 4)
 
     local player
