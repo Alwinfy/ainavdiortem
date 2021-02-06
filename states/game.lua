@@ -7,7 +7,7 @@ function game:enter()
     music = love.audio.newSource('assets/music/simple_tune_for_game_jam.wav', 'stream')
     music:play()
     music:setLooping(true)
-    --map = sti('assets/tiled/test_map_brick_wall.lua')
+    map = sti('assets/tiled/untitled.lua')
 end
 
 function game:leave()
@@ -20,12 +20,12 @@ function game:resume()
 end
 
 function game:update(dt)
-    --map:update(dt)
+    map:update(dt)
 end
 
 function game:draw()
     love.graphics.print('There is no game.', 10, 10)
-    --map:draw()
+    map:draw()
 end
 
 return game
