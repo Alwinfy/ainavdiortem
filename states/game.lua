@@ -1,10 +1,13 @@
+local sti = require('libs.sti.sti')
+
 local game = {}
 
 function game:enter()
     -- Play music
-    music = love.audio.newSource('assets/simple_tune_for_game_jam.wav', 'stream')
+    music = love.audio.newSource('assets/music/simple_tune_for_game_jam.wav', 'stream')
     music:play()
     music:setLooping(true)
+    --map = sti('assets/tiled/test_map_brick_wall.lua')
 end
 
 function game:leave()
@@ -16,8 +19,13 @@ function game:resume()
     music:play()
 end
 
+function game:update(dt)
+    --map:update(dt)
+end
+
 function game:draw()
     love.graphics.print('There is no game.', 10, 10)
+    --map:draw()
 end
 
 return game
