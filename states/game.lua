@@ -1,5 +1,6 @@
 local sti = require 'libs.sti.sti'
 local Camera = require 'libs.hump.camera'
+local bump = require 'libs.bump'
 
 local game = {}
 
@@ -48,6 +49,10 @@ function game:enter()
 
     -- Create camera
     camera = Camera(0, 0, 4)
+
+    -- Create bump world
+    world = bump.newWorld(16)
+    bump_init(world)
 
     -- Load map
     -- From https://github.com/karai17/Simple-Tiled-Implementation/blob/master/tutorials/01-introduction-to-sti.md

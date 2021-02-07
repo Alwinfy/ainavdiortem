@@ -1,6 +1,5 @@
 Gamestate = require 'libs.hump.gamestate'
-
-stage = 'stage3'
+Stage = require 'states.stage'
 
 states = {}
 states.menu = require 'states.menu'
@@ -30,6 +29,11 @@ function togglePause()
     end
 end
 
+function loadStage(stageName)
+    stage = stageName
+    Gamestate.switch(states.game)
+end
+
 -- Pause or unpause based on focus
 function love.focus(gainsFocus)
     if gainsFocus then
@@ -55,6 +59,12 @@ function love.load()
     love.graphics.setNewFont(24)
     -- Overwrite all love callbacks to the library that manages game states
     Gamestate.registerEvents()
-    -- Switch to main menu
-    Gamestate.switch(states.game)
+    -- Add stages to game state list
+    for i = 1, 5 do
+        local lvl = 'stage' .. i
+        states[lvl] = Stage(lvl)
+    end
+    -- Switch to game
+    --Gamestate.switch(states.debug)
+    loadStage('stage2')
 end
