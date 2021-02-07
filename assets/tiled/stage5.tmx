@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.4" tiledversion="1.4.3" orientation="orthogonal" renderorder="right-down" width="30" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="2">
+ <editorsettings>
+  <export target="stage5.lua" format="lua"/>
+ </editorsettings>
  <tileset firstgid="1" source="wall.tsx"/>
  <tileset firstgid="10" source="brick.tsx"/>
  <tileset firstgid="19" source="spikes.tsx"/>

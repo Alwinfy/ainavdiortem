@@ -201,7 +201,71 @@ return {
       properties = {},
       terrains = {},
       tilecount = 9,
-      tiles = {}
+      tiles = {
+        {
+          id = 0,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 1,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 2,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 3,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 4,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 5,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 6,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 7,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        },
+        {
+          id = 8,
+          properties = {
+            ["collidable"] = true,
+            ["damaging"] = true
+          }
+        }
+      }
     }
   },
   layers = {

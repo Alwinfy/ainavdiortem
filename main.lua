@@ -8,6 +8,7 @@ states.swoleTim = require 'states.swoleTim' -- I was experimenting with the love
 states.debug = require 'states.debug'
 states.game = require 'states.game'
 states.physics = require 'states.physics' -- Original love.physics state
+states.dead = require 'states.dead'
 
 function unpause()
     if Gamestate.current() == states.pause then

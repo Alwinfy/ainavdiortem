@@ -44,6 +44,9 @@ local function updateEntites(self, dt)
     -- Also taken from the OSM tutorial
     -- Loop through those collisions to see if anything important is happening
     for i, coll in ipairs(cols) do
+        if coll.other.properties.damaging then
+            Gamestate.push(states.dead)
+        end
         if coll.touch.y > goalY then  -- We touched below (remember that higher locations have lower y values) our intended target.
             player.hasReachedMax = true -- this scenario does not occur in this demo
             player.isGrounded = false

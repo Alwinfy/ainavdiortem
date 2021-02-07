@@ -8,8 +8,8 @@ return {
   height = 10,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 3,
-  nextobjectid = 18,
+  nextlayerid = 4,
+  nextobjectid = 20,
   properties = {},
   tilesets = {
     {
@@ -62,21 +62,21 @@ return {
         {
           id = 3,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
         {
           id = 4,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
         {
           id = 5,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
@@ -125,21 +125,21 @@ return {
         {
           id = 12,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
         {
           id = 13,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
         {
           id = 14,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
@@ -188,21 +188,21 @@ return {
         {
           id = 21,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
         {
           id = 22,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
         {
           id = 23,
           properties = {
-            ["collidable"] = true,
+            ["collidable"] = false,
             ["damaging"] = true
           }
         },
@@ -256,6 +256,32 @@ return {
         16, 17, 26, 26, 27, 1, 2, 2, 2, 2, 2, 2, 2, 2, 11, 11, 11, 11, 11, 12,
         25, 27, 2, 2, 2, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12,
         1, 2, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 21
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 3,
+      name = "entities",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 19,
+          name = "player",
+          type = "",
+          shape = "rectangle",
+          x = 52.7857,
+          y = 73.2189,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
       }
     }
   }
