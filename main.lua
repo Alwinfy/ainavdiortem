@@ -1,14 +1,16 @@
 Gamestate = require 'libs.hump.gamestate'
+Class = require 'libs.hump.class'
 Stage = require 'states.stage'
 
 states = {}
 states.menu = require 'states.menu'
 states.pause = require 'states.pause'
 states.swoleTim = require 'states.swoleTim' -- I was experimenting with the love callbacks with this :P
-states.debug = require 'states.debug'
 states.game = require 'states.game'
 states.physics = require 'states.physics' -- Original love.physics state
 states.dead = require 'states.dead'
+states.levelChooser = require 'states.levelChooser'
+states.debug = require 'states.debug'
 
 function unpause()
     if Gamestate.current() == states.pause then
@@ -59,12 +61,7 @@ function love.load()
     love.graphics.setNewFont(24)
     -- Overwrite all love callbacks to the library that manages game states
     Gamestate.registerEvents()
-    -- Add stages to game state list
-    for i = 1, 5 do
-        local lvl = 'stage' .. i
-        states[lvl] = Stage(lvl)
-    end
-    -- Switch to game
-    --Gamestate.switch(states.debug)
-    loadStage('stage2')
+    -- Switch to level chooser
+    Gamestate.switch(states.levelChooser)
+    --loadStage('stage2')
 end

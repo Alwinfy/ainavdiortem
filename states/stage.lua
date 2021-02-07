@@ -1,8 +1,9 @@
-Class = require 'libs.hump.class'
-
 local Stage = Class{
+    name = 'level2',
     init = function(self, name)
-        self.name = name
+        if name ~= nil then
+            self.name = name
+        end
     end
 }
 
