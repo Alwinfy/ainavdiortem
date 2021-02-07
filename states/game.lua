@@ -1,6 +1,7 @@
 local sti = require 'libs.sti.sti'
 local Camera = require 'libs.hump.camera'
-local bump = require 'libs.bump'
+local bump = require 'libs.bump.bump'
+local Settings = require 'playersettings'
 
 local game = {}
 
@@ -9,22 +10,47 @@ local function getPlayer()
 end
 
 local function updateEntites(self, dt)
-    local speed = 96 * dt
+    local player = self.player
+    local speed = player.speed
+    local goalX = player.x
+    local goalY = player.y
 
-    if love.keyboard.isDown('w', 'up') then
-        self.player.y = self.player.y - speed
-    end
-
-    if love.keyboard.isDown('s', 'down') then
-        self.player.y = self.player.y + speed
-    end
+    -- Apply gravity
+    player.yVelocity = player.yVelocity + player.gravity * dt
 
     if love.keyboard.isDown('a', 'left') then
-        self.player.x = self.player.x - speed
+        goalX = goalX - speed * dt
+    end
+    if love.keyboard.isDown('d', 'right') then
+        goalX = goalX + speed * dt
     end
 
-    if love.keyboard.isDown('d', 'right') then
-        self.player.x = self.player.x + speed
+    if love.keyboard.isDown('w', 'up') then
+        --- From the OSM tutorial
+        if -player.yVelocity < player.jumpMaxSpeed and not player.hasReachedMax then
+            player.yVelocity = player.yVelocity - player.jumpAcceleration * dt
+        elseif math.abs(player.yVelocity) > player.jumpMaxSpeed then
+            player.hasReachedMax = true
+        end
+        
+        player.isGrounded = false -- we are no longer in contact with the ground
+    end
+
+    goalY = goalY + player.yVelocity * dt
+
+    local actualX, actualY, cols, len = world:move(self.player, goalX, goalY)
+    self.player.x, self.player.y = actualX, actualY
+
+    -- Also taken from the OSM tutorial
+    -- Loop through those collisions to see if anything important is happening
+    for i, coll in ipairs(cols) do
+        if coll.touch.y > goalY then  -- We touched below (remember that higher locations have lower y values) our intended target.
+            player.hasReachedMax = true -- this scenario does not occur in this demo
+            player.isGrounded = false
+        elseif coll.normal.y < 0 then
+            player.hasReachedMax = false
+            player.isGrounded = true
+        end
     end
 end
 
@@ -50,15 +76,15 @@ function game:enter()
     -- Create camera
     camera = Camera(0, 0, 4)
 
-    -- Create bump world
-    world = bump.newWorld(16)
-    bump_init(world)
-
     -- Load map
     -- From https://github.com/karai17/Simple-Tiled-Implementation/blob/master/tutorials/01-introduction-to-sti.md
 
     -- Using a global variable cause otherwise it would need a big refactor
-    map = sti('assets/tiled/' .. stage .. '.lua')
+    map = sti('assets/tiled/' .. stage .. '.lua', { 'bump' })
+
+    -- Create bump world
+    world = bump.newWorld(16)
+    map:bump_init(world)
 
     local layer = map:addCustomLayer('entities', 4)
     for k, object in pairs(map.objects) do
@@ -66,9 +92,14 @@ function game:enter()
             layer.player = object
         end
     end
-    layer.player.sprite = love.graphics.newImage('assets/entities/full_robot.png')
     layer.update = updateEntites
     layer.draw = drawEntities
+    local player = layer.player
+    player.sprite = love.graphics.newImage('assets/entities/full_robot.png')
+    for key, val in pairs(Settings) do
+        player[key] = val
+    end
+    world:add(player, player.x, player.y, player.sprite:getWidth(), player.sprite:getHeight())
 end
 
 function game:leave()

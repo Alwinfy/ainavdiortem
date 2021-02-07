@@ -41,190 +41,190 @@ return {
         {
           id = 0,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 1,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 2,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 3,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 4,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 5,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 6,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 7,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 8,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 9,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 10,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 11,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 12,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 13,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 14,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 15,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 16,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 17,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 18,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 19,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 20,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = false
           }
         },
         {
           id = 21,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 22,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 23,
           properties = {
-            ["damaging"] = true,
-            ["solid"] = true
+            ["collidable"] = true,
+            ["damaging"] = true
           }
         },
         {
           id = 24,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 25,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         },
         {
           id = 26,
           properties = {
-            ["damaging"] = false,
-            ["solid"] = false
+            ["collidable"] = false,
+            ["damaging"] = false
           }
         }
       }

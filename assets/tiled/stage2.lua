@@ -41,55 +41,55 @@ return {
         {
           id = 0,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 1,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 2,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 3,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 4,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 5,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 6,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 7,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         },
         {
           id = 8,
           properties = {
-            ["solid"] = false
+            ["collidable"] = false
           }
         }
       }
@@ -123,55 +123,55 @@ return {
         {
           id = 0,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 1,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 2,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 3,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 4,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 5,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 6,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 7,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         },
         {
           id = 8,
           properties = {
-            ["solid"] = true
+            ["collidable"] = true
           }
         }
       }

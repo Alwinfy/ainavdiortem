@@ -44,7 +44,6 @@ function love.focus(gainsFocus)
 end
 
 function love.keyreleased(key)
-    print('key ' .. key .. ' released')
     -- F3 opens the debug menu
     if key == 'f3' then
         Gamestate.switch(states.debug)
